@@ -19,6 +19,7 @@
 
 - **Framework**: [React.js](https://reactjs.org/)
 - **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Version Control:**: Git & GitHub
 - **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
 - **Routing**: [React Router DOM](https://reactrouter.com/)
 
@@ -29,46 +30,46 @@
 ### 🏠 Home Page
 A clean and modern landing page showcasing the gym’s branding, featured workouts, and call-to-action buttons.
 
-![Home Page](<img width="1363" height="631" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/512e56f9-4fb4-4e12-a97f-3afc6a2e72d7" />
-)
+<img width="1363" height="631" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/ebb43f0b-31b8-4a8d-bc7c-53fac99d5994" />
+
 
 ---
 
 ### 💪 Workouts Section
 Explore categorized workouts with filters and hover animations for an engaging user experience.
 
-![Workouts](<img width="1358" height="644" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/d708b397-1e17-4901-b202-31e5d3035d24" />
-)
+<img width="1358" height="644" alt="Screenshot (95)" src="https://github.com/user-attachments/assets/73c00eb8-3700-41a4-8315-9f23340fabc4" />
 
 ---
 
 ### 👩‍🏫 Trainers Section
 View a list of certified trainers with their expertise, ratings, and “Book Now” options.
 
-![Trainers](<img width="1366" height="768" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/849e68bf-66ce-463b-a7d9-0a1ca0c22676" />
-)
+<img width="1366" height="768" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/06a90f7b-0b8e-4697-9d9b-4d5560e22b5a" />
+
 
 ---
 
 ### 📈 Progress Tracker  
 Track fitness goals with charts, streaks, and progress indicators.
 
-![Tracker Page](<img width="1359" height="640" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/71d73e5a-d392-4436-9521-1504a3839d2b" />
-)
+<img width="1359" height="640" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/9ad09f17-13bb-487b-af52-6b91dd489b8d" />
+
+
 ---
 
 ### 🥗 Diet Section  
 Discover personalized meal plans, daily nutrition breakdown, and dietary tips tailored to your fitness goals.
 
-![Diet Page](<img width="1358" height="643" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/2b008831-b8fd-44fb-bb83-72940ec32e70" />
-)
+<img width="1358" height="643" alt="Screenshot (94)" src="https://github.com/user-attachments/assets/c0f294fd-fbff-4a94-a5ff-d54e43534a1d" />
+
 
 ---
 
 ### 🔐 Sign Up Page  
 New users can create an account by entering their basic information, setting a password, and choosing their fitness role.
 
-![Sign Up](<img width="1356" height="638" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/7856d004-31b3-4c5e-b005-025bf9d63e77" />
-)
+<img width="1356" height="638" alt="Screenshot (96)" src="https://github.com/user-attachments/assets/e638dd51-cdc7-4032-b6ee-061508536032" />
+
 
 ---
