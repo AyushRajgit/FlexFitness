@@ -1,4 +1,4 @@
-<img width="1359" height="642" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/9a41b607-a28f-4edd-b033-8c8d5993190b" /><img width="1359" height="642" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/b64ed655-b879-48a5-ac52-c8a2d4b33385" /># 💪 FlexFitness
+###💪 FlexFitness
 
 **FlexFitness** is a modern, responsive frontend web application built using **React** and **Tailwind CSS**, crafted for fitness enthusiasts, personal trainers, and gym owners. This interactive platform allows users to explore curated workouts, connect with certified trainers, schedule sessions, and monitor fitness goals — all through an intuitive and user-friendly interface.
 
