@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
 import { Check, User, Calendar, Apple, Clock, Utensils, ChevronDown, ChevronRight } from 'lucide-react';
+import { useTheme } from '../contexts/ThemeContext';
 
 const DietPlanDashboard = () => {
+  const { isDarkMode } = useTheme();
   const [expandedDay, setExpandedDay] = useState(null);
 
   const toggleDay = (dayIndex) => {
     setExpandedDay(expandedDay === dayIndex ? null : dayIndex);
   };
+
   const dietPlans = [
     {
       day: "Monday",
@@ -165,23 +168,45 @@ const DietPlanDashboard = () => {
   ];
 
   const MealCard = ({ meal, type, icon }) => (
-    <div className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
+    <div className={`rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 border group ${
+      isDarkMode 
+        ? 'bg-gray-800 border-gray-700 hover:border-blue-500'
+        : 'bg-white border-gray-100 hover:border-blue-500'
+    }`}>
       <div className="flex items-center gap-3 mb-4">
-        <div className="p-2 bg-gradient-to-r from-blue-100 to-purple-100 rounded-lg group-hover:scale-110 transition-transform duration-300">
+        <div className={`p-2 rounded-lg group-hover:scale-110 transition-transform duration-300 ${
+          isDarkMode 
+            ? 'bg-gradient-to-r from-blue-900/50 to-purple-900/50'
+            : 'bg-gradient-to-r from-blue-100 to-purple-100'
+        }`}>
           {icon}
         </div>
-        <h4 className="text-xl font-bold text-gray-800 capitalize group-hover:text-blue-600 transition-colors duration-300">{type}</h4>
+        <h4 className={`text-xl font-bold capitalize group-hover:text-blue-600 transition-colors duration-300 ${
+          isDarkMode ? 'text-white' : 'text-gray-800'
+        }`}>
+          {type}
+        </h4>
       </div>
       <ul className="space-y-2 mb-4">
         {meal.items.map((item, index) => (
-          <li key={index} className="text-gray-700 text-sm leading-relaxed flex items-start gap-2 group-hover:text-gray-800 transition-colors duration-300">
+          <li key={index} className={`text-sm leading-relaxed flex items-start gap-2 group-hover:text-gray-300 transition-colors duration-300 ${
+            isDarkMode ? 'text-gray-300' : 'text-gray-700'
+          }`}>
             <span className="text-blue-500 mt-1 group-hover:text-blue-600 transition-colors duration-300">•</span>
             <span>{item}</span>
           </li>
         ))}
       </ul>
-      <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-3 group-hover:from-blue-100 group-hover:to-purple-100 transition-all duration-300">
-        <p className="text-sm font-semibold text-gray-800">{meal.macros}</p>
+      <div className={`rounded-lg p-3  transition-all duration-300 ${
+        isDarkMode 
+          ? 'bg-gradient-to-r from-blue-900/30 to-purple-900/30'
+          : 'bg-gradient-to-r from-blue-50 to-purple-50'
+      }`}>
+        <p className={`text-sm font-semibold ${
+          isDarkMode ? 'text-gray-200' : 'text-gray-800'
+        }`}>
+          {meal.macros}
+        </p>
       </div>
     </div>
   );
@@ -194,23 +219,32 @@ const DietPlanDashboard = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className={`min-h-screen transition-colors duration-300 ${
+      isDarkMode 
+        ? 'bg-gradient-to-br from-gray-900 via-black to-gray-900'
+        : 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
+    }`}>
       {/* Header */}
-      <div className="bg-white shadow-lg border-b border-gray-200">
+      <div className={`shadow-lg border-b transition-colors duration-300 ${
+        isDarkMode 
+          ? 'bg-gray-900 border-gray-800'
+          : 'bg-white border-gray-200'
+      }`}>  
         <div className="max-w-7xl mx-auto px-6 py-8">
           <div className="text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+            <h1 className={`text-4xl md:text-5xl font-bold mb-4 ${
+              isDarkMode ? 'text-white' : 'text-gray-900'
+            }`}>
                Diet Plan for Muscle Building
             </h1>
             <div className="flex items-center justify-center gap-2 mb-2">
-              <span className="text-xl font-semibold text-gray-700">By</span>
+              <span className={`text-xl font-semibold ${
+                isDarkMode ? 'text-gray-300' : 'text-gray-700'
+              }`}>
+                By
+              </span>
               <span className="text-xl font-bold text-blue-600">Flex.Fitness</span>
             </div>
-            {/* <div className="flex items-center justify-center gap-2 text-gray-600">
-              <span className="font-medium">Medically Reviewed by</span>
-              <span className="font-bold text-blue-600">DR. Prasant</span>
-              <Check className="w-5 h-5 text-green-500" />
-            </div> */}
           </div>
         </div>
       </div>
@@ -218,59 +252,99 @@ const DietPlanDashboard = () => {
       {/* Why Diet is Critical Section */}
       <div className="max-w-7xl mx-auto px-6 py-12">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-8">
+          <h2 className={`text-3xl md:text-4xl font-bold mb-8 ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>
             Why Diet is Critical for Muscle Building?
           </h2>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {benefits.map((benefit, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 border border-gray-100 group">
+            <div key={index} className={`rounded-xl shadow-md p-6 hover:shadow-xl hover:scale-[1.02] hover:-translate-y-1 transition-all duration-300 border group ${
+              isDarkMode 
+                ? 'bg-gray-800 border-gray-700 hover:border-blue-500'
+                : 'bg-white border-gray-100 hover:border-blue-500'
+            }`}>
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-100 rounded-lg group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500 group-hover:scale-110 transition-all duration-300">
+                <div className={`p-2 rounded-lg group-hover:scale-110 transition-all duration-300 ${
+                  isDarkMode 
+                    ? 'bg-blue-900/50 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500'
+                    : 'bg-blue-100 group-hover:bg-gradient-to-r group-hover:from-blue-500 group-hover:to-purple-500'
+                }`}>
                   <div className="group-hover:text-white transition-colors duration-300">
                     {benefit.icon}
                   </div>
                 </div>
-                <h3 className="text-lg font-bold text-gray-800 group-hover:text-blue-600 transition-colors duration-300">{benefit.title}</h3>
+                <h3 className={`text-lg font-bold group-hover:text-blue-600 transition-colors duration-300 ${
+                  isDarkMode ? 'text-white' : 'text-gray-800'
+                }`}>
+                  {benefit.title}
+                </h3>
               </div>
-              <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{benefit.description}</p>
+              <p className={`leading-relaxed group-hover:text-gray-300 transition-colors duration-300 ${
+                isDarkMode ? 'text-gray-300' : 'text-gray-600'
+              }`}>
+                {benefit.description}
+              </p>
             </div>
           ))}
         </div>
 
         {/* Diet Plan */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+          <h2 className={`text-3xl md:text-4xl font-bold ${
+            isDarkMode ? 'text-white' : 'text-gray-900'
+          }`}>
             Sample 6-Day Meal Plan for Muscle Gain
           </h2>
         </div>
 
         <div className="space-y-4">
           {dietPlans.map((plan, planIndex) => (
-            <div key={planIndex} className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 overflow-hidden">
+            <div key={planIndex} className={`rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border overflow-hidden ${
+              isDarkMode 
+                ? 'bg-gray-800 border-gray-700 hover:border-blue-500'
+                : 'bg-white border-gray-100 hover:border-blue-500'
+            }`}>
               {/* Day Header - Clickable */}
               <div 
-                className="flex items-center justify-between p-6 cursor-pointer hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50 transition-all duration-300 group"
+                className={`flex items-center justify-between p-6 cursor-pointer transition-all duration-300 group ${
+                  isDarkMode 
+                    ? 'hover:bg-gradient-to-r hover:from-blue-900/30 hover:to-purple-900/30'
+                    : 'hover:bg-gradient-to-r hover:from-blue-50 hover:to-purple-50'
+                }`}
                 onClick={() => toggleDay(planIndex)}
               >
                 <div className="flex items-center gap-4">
                   <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <Calendar className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl md:text-3xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                  <h3 className={`text-2xl md:text-3xl font-bold group-hover:text-blue-600 transition-colors duration-300 ${
+                    isDarkMode ? 'text-white' : 'text-gray-900'
+                  }`}>
                     {plan.day}
                   </h3>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span className="text-sm text-gray-500 group-hover:text-gray-700 transition-colors duration-300">
+                  <span className={`text-sm group-hover:text-gray-400 transition-colors duration-300 ${
+                    isDarkMode ? 'text-gray-400' : 'text-gray-500'
+                  }`}>
                     {expandedDay === planIndex ? 'Hide meals' : 'View meals'}
                   </span>
-                  <div className="p-2 rounded-full bg-gray-100 group-hover:bg-blue-100 transition-all duration-300">
+                  <div className={`p-2 rounded-full transition-all duration-300 ${
+                    isDarkMode 
+                      ? 'bg-gray-700 group-hover:bg-blue-900/50'
+                      : 'bg-gray-100 group-hover:bg-blue-100'
+                  }`}>
                     {expandedDay === planIndex ? (
-                      <ChevronDown className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+                      <ChevronDown className={`w-5 h-5 group-hover:text-blue-600 transition-colors duration-300 ${
+                        isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                      }`} />
                     ) : (
-                      <ChevronRight className="w-5 h-5 text-gray-600 group-hover:text-blue-600 transition-colors duration-300" />
+                      <ChevronRight className={`w-5 h-5 group-hover:text-blue-600 transition-colors duration-300 ${
+                        isDarkMode ? 'text-gray-400' : 'text-gray-600'
+                      }`} />
                     )}
                   </div>
                 </div>
@@ -283,7 +357,9 @@ const DietPlanDashboard = () => {
                   : 'max-h-0 opacity-0 overflow-hidden'
               }`}>
                 <div className="px-6 pb-6">
-                  <div className="border-t border-gray-200 pt-6">
+                  <div className={`border-t pt-6 ${
+                    isDarkMode ? 'border-gray-700' : 'border-gray-200'
+                  }`}>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                       {Object.entries(plan.meals).map(([mealType, meal]) => (
                         <MealCard
