@@ -47,16 +47,7 @@ View a list of certified trainers with their expertise, ratings, and “Book Now
 
 ---
 
-### 📅 Schedule Page
-Schedule sessions seamlessly with a calendar UI and time-slot picker.
-
-![Schedule](./public/assets/screenshots/schedule.png)
-
----
-
 ### 📈 Progress Tracker (Coming Soon)
 Track fitness goals with charts, streaks, and progress indicators.
 
-> *(Placeholder until implemented)*
-
----
+![Tracker](./public/assets/screenshots/tracker.png)
