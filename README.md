@@ -1,4 +1,4 @@
-# 💪 FlexFitness
+<img width="1359" height="642" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/9a41b607-a28f-4edd-b033-8c8d5993190b" /><img width="1359" height="642" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/b64ed655-b879-48a5-ac52-c8a2d4b33385" /># 💪 FlexFitness
 
 **FlexFitness** is a modern, responsive frontend web application built using **React** and **Tailwind CSS**, crafted for fitness enthusiasts, personal trainers, and gym owners. This interactive platform allows users to explore curated workouts, connect with certified trainers, schedule sessions, and monitor fitness goals — all through an intuitive and user-friendly interface.
 
@@ -45,7 +45,7 @@ Explore categorized workouts with filters and hover animations for an engaging u
 ### 👩‍🏫 Trainers Section
 View a list of certified trainers with their expertise, ratings, and “Book Now” options.
 
-<img width="1366" height="768" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/06a90f7b-0b8e-4697-9d9b-4d5560e22b5a" />
+<img width="1359" height="642" alt="Screenshot (92)" src="https://github.com/user-attachments/assets/ac005513-ce64-4b16-8154-1edeb299548c" />
 
 
 ---
@@ -53,7 +53,7 @@ View a list of certified trainers with their expertise, ratings, and “Book Now
 ### 📈 Progress Tracker  
 Track fitness goals with charts, streaks, and progress indicators.
 
-<img width="1359" height="640" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/9ad09f17-13bb-487b-af52-6b91dd489b8d" />
+<img width="1359" height="640" alt="Screenshot (91)" src="https://github.com/user-attachments/assets/e7368a29-869b-45dd-aab5-5f221f3913a2" />
 
 
 ---
